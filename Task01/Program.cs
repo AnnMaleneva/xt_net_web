@@ -12,46 +12,17 @@ namespace Task01
         {
             //SquareRectangle();
 
-            //int n = Convert.ToInt32(Console.ReadLine());
 
-            //for (string number = ""; number.Length < n; number += "*")
-            //    Console.WriteLine(number);
-            //Console.ReadLine();
 
-            //Console.WriteLine("Введите величену треугольника: ");
-            //int v = Convert.ToInt32(Console.ReadLine());
-            //string[] a = new string[v];
-            //for (int i = 0; i < a.Length; i++)
-            //{
-            //    a[i] = "*";
-            //    Console.WriteLine();
-            //    for (int j = a.Length, k = 0; j > 0 && k < a.Length; k++, j++)
-            //    {
-            //        if (i > k || i > j)
-            //        {
-            //            Console.Write(a[i]);
-            //        }
-            //        else
-            //        {
-            //            Console.Write(" ");
-            //        }
 
-            //    }
-            //}
-            //Console.ReadLine();
 
-            int a = 0;
-            for (int i = 0; i < 1000; i++)
-            {
-                if (i % 3 == 0 && i % 5==0)
-                {
-                    a += i;
-                }
-            }
-            Console.WriteLine(a);
-            Console.ReadKey();
+            
+
+
 
         }
+
+        
 
 
 
@@ -133,7 +104,67 @@ namespace Task01
 
         #region 1.2. TRIANGLE 
 
-        
+        public static void Triangle()
+        {
+            Console.WriteLine("Enter the size of the right-angled triangle.");
+
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            for (string number = ""; number.Length < n; number += "*")
+                Console.WriteLine(number);
+            Console.ReadLine();
+
+        }
+
+        #endregion
+
+        #region 1.3. ANOTHER TRIANGLE        //не работает, доделать 
+
+        public static void AnotherTriangle()
+        {
+
+            Console.WriteLine("Введите величену треугольника: ");
+            int v = Convert.ToInt32(Console.ReadLine());
+            string[] a = new string[v];
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] = "*";
+                Console.WriteLine();
+                for (int j = a.Length, k = 0; j > 0 && k < a.Length; k++, j++)
+                {
+                    if (i > k || i > j)
+                    {
+                        Console.Write(a[i]);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+
+                }
+            }
+            Console.ReadLine();
+        }
+
+        #endregion    
+
+
+        #region 1.5. SUM OF NUMBERS
+
+        public static void SumOfNumbers()
+        {
+            int a = 0;
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    a += i;
+                }
+            }
+            Console.WriteLine(a);
+            Console.ReadKey();
+
+        }
 
         #endregion
 
