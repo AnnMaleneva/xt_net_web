@@ -12,15 +12,76 @@ namespace Task01
         {
             //SquareRectangle();
 
+            int[] array = new int[50];
+            Random rnd = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = rnd.Next(0, 1000);
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+            //Console.ReadLine();
+
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = 0; j < array.Length - i - 1; j++)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        int buf = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = buf;
+                    }
+                }
+            }
+
+            //Sort(array);
+            Console.WriteLine("Массив после сортировки:" );
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+
+            int a = array[0];
+            int b = array[49];
 
 
-
-
-            
-
-
-
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            Console.ReadLine();
         }
+
+            static int[] Sort(int[] arr)
+            {
+                
+                for (int i = 0; i < arr.Length - 1; i++)            
+                {                                                   
+                    for (int j = 0; j < arr.Length - i - 1; j++)    
+                    {                                              
+                        if (arr[j] > arr[j + 1])
+                        {                                          
+                            int buf = arr[j];              
+                            arr[j] = arr[j + 1];  
+                            arr[j + 1] = buf; 
+                        }                                           
+                    }                                              
+                }
+
+                return arr;
+            }
+
+
+
+
+
+
+
+
+        
 
         
 
@@ -167,6 +228,9 @@ namespace Task01
         }
 
         #endregion
+
+
+
 
     }
 }
