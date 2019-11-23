@@ -10,8 +10,57 @@ namespace Task01
     {
         static void Main(string[] args)
         {
-            SquareRectangle();
+            //SquareRectangle();
+
+            //int n = Convert.ToInt32(Console.ReadLine());
+
+            //for (string number = ""; number.Length < n; number += "*")
+            //    Console.WriteLine(number);
+            //Console.ReadLine();
+
+            //Console.WriteLine("Введите величену треугольника: ");
+            //int v = Convert.ToInt32(Console.ReadLine());
+            //string[] a = new string[v];
+            //for (int i = 0; i < a.Length; i++)
+            //{
+            //    a[i] = "*";
+            //    Console.WriteLine();
+            //    for (int j = a.Length, k = 0; j > 0 && k < a.Length; k++, j++)
+            //    {
+            //        if (i > k || i > j)
+            //        {
+            //            Console.Write(a[i]);
+            //        }
+            //        else
+            //        {
+            //            Console.Write(" ");
+            //        }
+
+            //    }
+            //}
+            //Console.ReadLine();
+
+            int a = 0;
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i % 3 == 0 && i % 5==0)
+                {
+                    a += i;
+                }
+            }
+            Console.WriteLine(a);
+            Console.ReadKey();
+
         }
+
+
+
+    
+
+     
+
+
+        
 
         public static void SquareRectangle()
         {
@@ -49,7 +98,7 @@ namespace Task01
                 Console.WriteLine("Noup");
                 Console.ReadLine();
             }
-        }
+        } //плохой код, работает, но не корректно, позже вернусь для изменения
 
         public static bool InputCheck (int a)
         {
@@ -80,9 +129,13 @@ namespace Task01
             {
                 return true;
             }
-        }
+        }  //плохой код, работает, но не корректно, позже вернусь для изменения
 
+        #region 1.2. TRIANGLE 
 
+        
+
+        #endregion
 
     }
 }
