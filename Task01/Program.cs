@@ -12,6 +12,24 @@ namespace Task01
         {
             //SquareRectangle();
 
+            string text = "Написать программу, которая определяет среднюю длину слова во введённой текстовой строке";
+
+            string[] words = text.Split(new char[] { ' ',',' }, StringSplitOptions.RemoveEmptyEntries);
+
+            int totalWords = words.Length;
+            Console.WriteLine("Всего слов: {0}.", totalWords);
+
+            foreach (string s in words)
+            {
+                Console.WriteLine(s);
+                Console.WriteLine(s.Length);
+            }
+            Console.ReadLine();
+
+
+
+
+
 
 
 
@@ -27,18 +45,18 @@ namespace Task01
 
 
 
-        
-
-        
 
 
 
-    
-
-     
 
 
-        
+
+
+
+
+
+
+
 
         public static void SquareRectangle()
         {
@@ -309,6 +327,83 @@ namespace Task01
 
         }
 
+        #endregion
+
+        #region 1.9. NON-NEGATIVE SUM 
+
+        public static void NonNegativeSum()
+        {
+            int[] array = new int[50];
+
+            Random rnd = new Random();
+
+            for (int i = 0; i < 50; i++)
+            {
+                array[i] = rnd.Next(-50, 50);
+            }
+
+            for (int i = 0; i < 50; i++)
+            {
+                Console.Write("{0},", array[i]);
+            }
+
+            Console.WriteLine();
+
+            int sum = 0;
+
+            for (int i = 0; i < 50; i++)
+            {
+                if (array[i] > 0)
+                    sum += array[i];
+
+            }
+
+            Console.WriteLine("Сумма всех положительных чисел: {0}.", sum);
+            Console.ReadLine();
+        }
+
+        #endregion
+
+        #region 1.10. 2D ARRAY 
+
+        public static void TwoDimensionalArray()
+        {
+            int[,] array = new int[3, 10];
+
+            Random rnd = new Random();
+
+            for (int z = 0; z < 3; z++)
+            {
+                for (int x = 0; x < 10; x++)
+                {
+                    array[z, x] = rnd.Next(0, 50);
+                }
+            }
+
+            for (int z = 0; z < 3; z++)
+            {
+                Console.WriteLine();
+                for (int x = 0; x < 10; x++)
+                {
+                    Console.Write("{0},", array[z, x]);
+
+                }
+            }
+            Console.WriteLine();
+            int sum = 0;
+            for (int z = 0; z < 3; z++)
+            {
+                for (int x = 0; x < 10; x++)
+                {
+                    if ((z + x) % 2 == 0)
+                        sum += array[z, x];
+                }
+            }
+
+            Console.WriteLine("Сумма элементов на четных позициях: {0}.", sum);
+            Console.ReadLine();
+
+        }
         #endregion
 
     }
