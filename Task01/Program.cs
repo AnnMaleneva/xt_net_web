@@ -12,19 +12,7 @@ namespace Task01
         {
             //SquareRectangle();
 
-            string text = "Написать программу, которая определяет среднюю длину слова во введённой текстовой строке";
 
-            string[] words = text.Split(new char[] { ' ',',' }, StringSplitOptions.RemoveEmptyEntries);
-
-            int totalWords = words.Length;
-            Console.WriteLine("Всего слов: {0}.", totalWords);
-
-            foreach (string s in words)
-            {
-                Console.WriteLine(s);
-                Console.WriteLine(s.Length);
-            }
-            Console.ReadLine();
 
 
 
@@ -404,6 +392,43 @@ namespace Task01
             Console.ReadLine();
 
         }
+        #endregion
+
+        #region 1.11. AVERAGE STRING LENGTH 
+
+        public static void AverageStringLength()
+        {
+            string text = "Написать программу, которая определяет среднюю длину слова во введённой текстовой строке";
+
+            string[] words = text.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+            int totalWords = words.Length;
+            Console.WriteLine("Всего слов: {0}.", totalWords);
+
+            int r = 0;
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                r += words[i].Length;
+
+            }
+            Console.WriteLine("Сумма всех букв в словах: {0}.", r);
+
+            int result = r / totalWords;
+
+            Console.WriteLine("Средняя длинна слов в исходной строке: {0}.", result);
+
+            //foreach (string s in words)
+            //{
+            //    Console.WriteLine(s);
+            //    Console.WriteLine(s.Length);
+
+            //}
+
+
+            Console.ReadLine();
+        }
+
         #endregion
 
     }
