@@ -12,25 +12,25 @@ namespace Task02
         private int _b; //координата центра, пускай будут по умолчанию нулями
         private double _radius;
 
-        //public int A { get; set; }     
-        //public int B { get; set; }
-        public double Radius 
+        public Round()
         {
-            get 
-            {
-                return _radius;
-            }
-            set 
-            {
-                if (value <= 0)
-                    throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero.");
-                _radius = value;
-            } 
+            _a = A;
+            _b = B;
+            _radius = Radius;
         }
 
+        public int A { get => _a; 
+            set => _a = (value > 0) ? value :
+                throw new ArgumentException("Invalid point"); }
+        public int B { get => _b;
+            set => _b = (value > 0) ? value :
+                throw new ArgumentException("Invalid point"); }
+        public double Radius { get => _radius; 
+            set => _radius = (value >= 0) ? value :
+                throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero."); } 
+        
         internal double Сircumference { get { return 2 * Math.PI * Radius; } }
         
-
         internal double AreaCircle { get { return Math.PI * Radius * Radius; } }
         
 

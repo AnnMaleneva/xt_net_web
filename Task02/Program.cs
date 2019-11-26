@@ -10,12 +10,15 @@ namespace Task02
     {
         static void Main(string[] args)
         {
-            Round r = new Round();
+            Round round = new Round();
 
-            r.Radius = 6;
+            round.A = -4;
+            Console.WriteLine(round.A); //excepsion
+            
+            round.Radius = 6;
 
-            var cir = r.Сircumference;
-            var area = r.AreaCircle;
+            var cir = round.Сircumference;
+            var area = round.AreaCircle;
 
             Console.WriteLine("Длина описаной окружности: {0}", cir);
             Console.WriteLine("Площадь круга: {0}.", area);
