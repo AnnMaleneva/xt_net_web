@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task02
 {
-    class User
+    public class User
     {
         private string _name;
         private string _surname;
@@ -14,7 +14,7 @@ namespace Task02
         private DateTime _birthday;
         private int _age;
 
-        public User(string _name, string _surname, string _patronymic, DateTime _birthday )
+        public User(string _name, string _surname, string _patronymic, DateTime _birthday)
         {
             UserName = _name;
             UserSurname = _surname;

@@ -32,7 +32,7 @@ namespace Task02
         
         internal double Сircumference { get { return 2 * Math.PI * Radius; } } //здесь сделала расчеты через вычисляемые свойства, в следующем задании через методы
         
-        internal double AreaCircle { get { return Math.PI * Radius * Radius; } }
+        public static double AreaCircle { get { return Math.PI * Radius * Radius; } }
         
 
 

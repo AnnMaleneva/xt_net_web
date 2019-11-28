@@ -10,41 +10,45 @@ namespace Task02
     {
         static void Main(string[] args)
         {
-            Round round = new Round(0, 0, 6);
-            
-            var cir = round.Сircumference;
-            var area = round.AreaCircle;
+            //Round round = new Round(0, 0, 6);
 
-            Console.WriteLine("Длина описаной окружности: {0}", cir);
-            Console.WriteLine("Площадь круга: {0}.", area);
-            Console.ReadKey();
+            //var cir = round.Сircumference;
+            //var area = round.AreaCircle;
 
-
-
-            Triangle triangle = new Triangle(5, 6, 7);
-
-
-            if (triangle.TriangleCanBe(triangle.A, triangle.B, triangle.C))
-            {
-
-                var S = triangle.Square(triangle.A, triangle.B, triangle.C);
-                var P = triangle.Perimeter(triangle.A, triangle.B, triangle.C);
-                Console.WriteLine("Площадь треугольника: {0}.", S);
-                Console.WriteLine("Периметр треугольника: {0}", P);
-                Console.ReadKey();
-            }
-            else
-                Console.WriteLine("Такой треугольник невозможен.");
-
-            Console.ReadKey();
+            //Console.WriteLine("Длина описаной окружности: {0}", cir);
+            //Console.WriteLine("Площадь круга: {0}.", area);
+            //Console.ReadKey();
 
 
 
-            User user = new User("Иван","Иванов","Иванович", new DateTime (1992, 02, 04));
+            //Triangle triangle = new Triangle(5, 6, 7);
 
-            Console.WriteLine("Имя пользователя: {0}." + "\n" + "Фамилия пользователя: {1}." + "\n" + 
-                "Отчество пользователя: {2}." + "\n" + "Дата рождения пользователя: {3}." + "\n" + 
+
+            //if (triangle.TriangleCanBe(triangle.A, triangle.B, triangle.C))
+            //{
+
+            //    var S = triangle.Square(triangle.A, triangle.B, triangle.C);
+            //    var P = triangle.Perimeter(triangle.A, triangle.B, triangle.C);
+            //    Console.WriteLine("Площадь треугольника: {0}.", S);
+            //    Console.WriteLine("Периметр треугольника: {0}", P);
+            //    Console.ReadKey();
+            //}
+            //else
+            //    Console.WriteLine("Такой треугольник невозможен.");
+
+            //Console.ReadKey();
+
+
+
+            User user = new User("Иван", "Иванов", "Иванович", new DateTime(1992, 02, 04));
+
+            Console.WriteLine("Имя пользователя: {0}." + "\n" + "Фамилия пользователя: {1}." + "\n" +
+                "Отчество пользователя: {2}." + "\n" + "Дата рождения пользователя: {3}." + "\n" +
                 "Возраст пользователя: {4}", user.UserName, user.UserSurname, user.UserPatronymic, user.UserBirthday, user.UserAge);
+
+            Employee employee = new Employee("Иван", "Иванов", "Иванович", new DateTime(1992, 02, 04), "Бухгалтер", new DateTime(2010, 05, 23));
+
+            Console.WriteLine("Стаж работы: {0}.", employee.WorkExperience);
 
             Console.ReadLine();
 
