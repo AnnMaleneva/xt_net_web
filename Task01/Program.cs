@@ -10,164 +10,202 @@ namespace Task01
     {
         static void Main(string[] args)
         {
-            //SquareRectangle();
+            
 
-            
-            
+
+
+
+
 
         }
+                             
 
-        
-
-        [Flags]
-        public enum WritingStyle
+        #region 1.1. RECTANGLE 
+        public static void SquareRectangle()
         {
-            Bold = 1,
-            Italic = 2,
-            Underline = 4
+            int a = Convert.ToInt32(Console.ReadLine());
+
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            if (InputCheck(a) && InputCheck(b))
+            {
+                var result = a * b;
+                Console.WriteLine(result);
+                Console.ReadLine();
+            }
+
         }
 
+        public static bool InputCheck(int a)
+        {
+            a = (a > 0) ? a :
+                throw new ArgumentException("Side length cannot be negative.");
+            return true;
+        }
+        #endregion
 
+        #region 1.2. TRIANGLE 
 
+        public static void Triangle()
+        {
+            Console.WriteLine("Enter the size of the right-angled triangle.");
 
-            public static void SquareRectangle()
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            for (string number = ""; number.Length < n; number += "*")
+                Console.WriteLine(number);
+            Console.ReadLine();
+
+        }
+
+        #endregion
+
+        #region 1.3. ANOTHER TRIANGLE    
+
+        public static void AnotherTriangle()
+        {
+
+            Console.WriteLine("Введите величену треугольника: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= n * 2; i = i + 2)
             {
-                var A = Console.ReadLine();
-                int a = 0;
-                if (Int32.TryParse(A, out a))
+                for (int j = 0; j < (n * 2 - i) / 2; j++)
                 {
-                    Console.WriteLine("Good");
+                    Console.Write(" ");
                 }
-                else
+                for (int k = 0; k < i; k++)
                 {
-                    Console.WriteLine("Incorrect");
+                    Console.Write("*");
                 }
-                var B = Console.ReadLine();
-                int b = 0;
-                if (Int32.TryParse(B, out b))
-                {
-                    Console.WriteLine("Good");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect");
-                }
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+        }
 
-                //InputCheck(a);
-                //InputCheck(b);
-                if (InputCheck(a) && InputCheck(b))
-                {
-                    var result = a * b;
-                    Console.WriteLine(result);
-                    Console.ReadLine();
-                }
-                else
-                {
-                    Console.WriteLine("Noup");
-                    Console.ReadLine();
-                }
-            } //плохой код, работает, но не корректно, позже вернусь для изменения
+        #endregion
+        
+        #region 1.4. X-MAS TREE 
 
-            public static bool InputCheck(int a)
+        public static void XMasTree()
+        {
+            Console.WriteLine("Введите количество треугольников в рождественской елке :-)");
+            int n = Convert.ToInt32(Console.ReadLine());
+            for (int x = 1; x <= n; x++)
             {
-                //a = Convert.ToInt32(Console.ReadLine());
-                //try
-                //{
-                //    a = Convert.ToInt32(Console.ReadLine());
-                //}
-                //catch
-                //{
-                //    Console.WriteLine("Exeption");
-                //    return false;
-                //}
-
-                if (a == 0)
+                for (int i = 1; i <= x * 2; i = i + 2)
                 {
-                    Console.WriteLine("Incorrect");
-                    return false;
+                    for (int j = 0; j < (n * 2 - i) / 2; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int k = 0; k < i; k++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
                 }
+            }
+            Console.ReadKey();
+        }
 
-                else if (a < 0)
-                {
-                    Console.WriteLine("Incorrect");
-                    return false;
-                }
+        #endregion
+        
+        #region 1.5. SUM OF NUMBERS
 
-                else
-                {
-                    return true;
-                }
-            }  //плохой код, работает, но не корректно, позже вернусь для изменения
-
-            #region 1.2. TRIANGLE 
-
-            public static void Triangle()
+        public static void SumOfNumbers()
+        {
+            int a = 0;
+            for (int i = 0; i < 1000; i++)
             {
-                Console.WriteLine("Enter the size of the right-angled triangle.");
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    a += i;
+                }
+            }
+            Console.WriteLine(a);
+            Console.ReadKey();
+
+        }
+
+        #endregion
+
+        #region 1.6. FONT ADJUSTMENT
+
+        public static void FontAdjustment()
+        {
+            WritingStyle style = WritingStyle.None;
+
+            //if (style.HasFlag(WritingStyle.Bold))
+            //       Console.WriteLine("Bold");
+            //if (style.HasFlag(WritingStyle.Italic))
+            //       Console.WriteLine("Italic");
+            //if (style.HasFlag(WritingStyle.Underline))
+            //       Console.WriteLine("Underline");
+
+
+            bool flag = true;
+
+            while (flag)
+            {
+                Console.WriteLine("Введите стиль начетрания текста:\n 1. - bold;\n 2. - italic;\n 3. - underline.\n Выход: 4.");
 
                 int n = Convert.ToInt32(Console.ReadLine());
 
-                for (string number = ""; number.Length < n; number += "*")
-                    Console.WriteLine(number);
-                Console.ReadLine();
-
-            }
-
-            #endregion
-
-            #region 1.3. ANOTHER TRIANGLE        //не работает, доделать 
-
-            public static void AnotherTriangle()
-            {
-
-                Console.WriteLine("Введите величену треугольника: ");
-                int v = Convert.ToInt32(Console.ReadLine());
-                string[] a = new string[v];
-                for (int i = 0; i < a.Length; i++)
+                switch (n)
                 {
-                    a[i] = "*";
-                    Console.WriteLine();
-                    for (int j = a.Length, k = 0; j > 0 && k < a.Length; k++, j++)
-                    {
-                        if (i > k || i > j)
+                    case 1:
                         {
-                            Console.Write(a[i]);
-                        }
-                        else
-                        {
-                            Console.Write(" ");
+                            style = WritingStyle.Bold;
+
+                            break;
                         }
 
-                    }
+                    case 2:
+                        {
+                            style = WritingStyle.Bold | WritingStyle.Italic;
+
+                            break;
+                        }
+
+                    case 3:
+                        {
+                            style = WritingStyle.Bold | WritingStyle.Italic | WritingStyle.Underline;
+
+                            break;
+                        }
+                    case 4:
+                        {
+                            flag = false;
+                            break;
+                        }
+                    default:
+                        {
+                            break;
+                        }
+
                 }
-                Console.ReadLine();
+                Console.WriteLine(style);
             }
 
-            #endregion
+            Console.ReadLine();
+        }
+
+           [Flags]
+           public enum WritingStyle
+           {
+            None = 0,
+            Bold = 1,
+            Italic = 2,
+            Underline = 4,
+           }
+        
 
 
-            #region 1.5. SUM OF NUMBERS
+        #endregion
 
-            public static void SumOfNumbers()
-            {
-                int a = 0;
-                for (int i = 0; i < 1000; i++)
-                {
-                    if (i % 3 == 0 && i % 5 == 0)
-                    {
-                        a += i;
-                    }
-                }
-                Console.WriteLine(a);
-                Console.ReadKey();
+        #region 1.7 ARRAY PROCESSING 
 
-            }
-
-            #endregion
-
-            #region 1.7 ARRAY PROCESSING 
-
-            public static void Array()
+        public static void Array()
             {
                 int[] array = new int[50];
                 Random rnd = new Random();
@@ -232,7 +270,7 @@ namespace Task01
 
             #endregion
 
-            #region 1.8 NO POSITIVE
+        #region 1.8 NO POSITIVE
             public static void NoPisitive()
             {
                 int[,,] array = new int[10, 10, 10];
@@ -301,7 +339,7 @@ namespace Task01
 
             #endregion
 
-            #region 1.9. NON-NEGATIVE SUM 
+        #region 1.9. NON-NEGATIVE SUM 
 
             public static void NonNegativeSum()
             {
@@ -336,7 +374,7 @@ namespace Task01
 
             #endregion
 
-            #region 1.10. 2D ARRAY 
+        #region 1.10. 2D ARRAY 
 
             public static void TwoDimensionalArray()
             {
@@ -378,7 +416,7 @@ namespace Task01
             }
             #endregion
 
-            #region 1.11. AVERAGE STRING LENGTH 
+        #region 1.11. AVERAGE STRING LENGTH 
 
             public static void AverageStringLength()
             {
@@ -413,8 +451,35 @@ namespace Task01
                 Console.ReadLine();
             }
 
-            #endregion
+        #endregion
 
-        
+        #region 1.12. CHAR DOUBLER 
+
+        public static void CharDouble() 
+        {
+            Console.WriteLine("Введите первую строку:");
+            String s1 = Console.ReadLine();
+            Console.WriteLine("Введите вторую строку:");
+            String s2 = Console.ReadLine();
+
+            StringBuilder result = new StringBuilder(s1);
+
+            char[] char2 = s2.ToCharArray();
+
+            for (int i = 0; i < char2.Length; i++)
+            {
+                int indexOfChar = s1.IndexOf(char2[i]);
+                result.Insert(++indexOfChar, char2[i]);
+
+            }
+
+            Console.WriteLine(result);
+
+            Console.ReadLine();
+
+        }
+        #endregion
+
+
     }
 }
