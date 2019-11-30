@@ -30,17 +30,15 @@ namespace Task02
         {
 
             double ringarea = Math.PI * OuterRadius * OuterRadius;
-            double result = ringarea - Round.AreaCircle; //компилятор поросил сделать вычисляемое свойство AreaCircle статическим
+            double result = ringarea - AreaCircle; //тут хочу чтобы в эти вычисления включались результаты вычислений из базаового класса
             return result; 
         }
 
-        public double OuterСircumference(double outerRadius) 
-        {
-            return 2 * Math.PI * OuterRadius;
-        } 
+        public double OuterСircumference { get { return 2 * Math.PI * OuterRadius; } } 
 
-        public double AreaCircle() 
-        { 
+        public double TotalLength () 
+        {
+            return OuterСircumference + Сircumference;
         }
 
 

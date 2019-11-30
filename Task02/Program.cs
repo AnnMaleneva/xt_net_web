@@ -40,19 +40,27 @@ namespace Task02
 
 
 
-            User user = new User("Иван", "Иванов", "Иванович", new DateTime(1992, 02, 04));
+            //User user = new User("Иван", "Иванов", "Иванович", new DateTime(1992, 02, 04));
 
-            Console.WriteLine("Имя пользователя: {0}." + "\n" + "Фамилия пользователя: {1}." + "\n" +
-                "Отчество пользователя: {2}." + "\n" + "Дата рождения пользователя: {3}." + "\n" +
-                "Возраст пользователя: {4}", user.UserName, user.UserSurname, user.UserPatronymic, user.UserBirthday, user.UserAge);
+            //Console.WriteLine("Имя пользователя: {0}." + "\n" + "Фамилия пользователя: {1}." + "\n" +
+            //    "Отчество пользователя: {2}." + "\n" + "Дата рождения пользователя: {3}." + "\n" +
+            //    "Возраст пользователя: {4}", user.UserName, user.UserSurname, user.UserPatronymic, user.UserBirthday, user.UserAge);
 
-            Employee employee = new Employee("Иван", "Иванов", "Иванович", new DateTime(1992, 02, 04), "Бухгалтер", new DateTime(2010, 05, 23));
+            //Employee employee = new Employee("Иван", "Иванов", "Иванович", new DateTime(1992, 02, 04), "Бухгалтер", new DateTime(2010, 05, 23));
 
-            Console.WriteLine("Стаж работы: {0}.", employee.WorkExperience);
+            //Console.WriteLine("Стаж работы: {0}.", employee.WorkExperience);
 
-            Console.ReadLine();
+            Line l = new Line(4, 3, 5, 6);
+
+            l.ShowFigure();
 
 
+
+
+        Console.ReadLine();
         }
+
+
+       
     }
 }
