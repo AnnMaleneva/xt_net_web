@@ -11,11 +11,17 @@ namespace Task02
         protected int baseX;
         protected int baseY;
 
+        //public Figures()
+        //{
+        //    X = baseX;
+        //    Y = baseY;
+        //}
+
 
         public abstract int X { get; }
         public abstract int Y { get; }
 
-        //abstract public Figures CreateFigure();
+        abstract public Figures CreateFigure();
 
         abstract public void ShowFigure();
    
@@ -25,7 +31,7 @@ namespace Task02
     {
         private int _secondX, _secondY;
 
-        public Line(int baseX, int baseY, int SecondX, int SecondY) : base()
+        public Line() : base()
         {
             _secondX = SecondX;
             _secondY = SecondY;
@@ -55,10 +61,10 @@ namespace Task02
 
         public override int Y => throw new NullReferenceException();
 
-        //public override Figures CreateFigure()
-        //{
-        //    return new Line(5, 6);
-        //}
+        public override Figures CreateFigure()
+        {
+            return new Line();
+        }
 
         public override void ShowFigure()
         {
@@ -67,156 +73,156 @@ namespace Task02
         }
     }
 
-    //class Rectangle : Figures
-    //{
-    //    public override int X => throw new NullReferenceException(); //коориднаты пересечения диагоналей
+    class Rectangle : Figures
+    {
+        public override int X => throw new NullReferenceException(); //коориднаты пересечения диагоналей
 
-    //    public override int Y => throw new NullReferenceException();
+        public override int Y => throw new NullReferenceException();
 
-    //    private int _sideA;
-    //    private int _sideB;
+        private int _sideA;
+        private int _sideB;
 
-    //    public Rectangle()
-    //    {
-    //        A = _sideA;
-    //        B = _sideB;
-    //    }
+        public Rectangle()
+        {
+            A = _sideA;
+            B = _sideB;
+        }
 
-    //    public int A
-    //    {
-    //        get => _sideA;
-    //        set => _sideA = (value > 0) ? value :
-    //            throw new ArgumentException("Side length cannot be negative.");
-    //    }
+        public int A
+        {
+            get => _sideA;
+            set => _sideA = (value > 0) ? value :
+                throw new ArgumentException("Side length cannot be negative.");
+        }
 
-    //    public int B
-    //    {
-    //        get => _sideB;
-    //        set => _sideB = (value > 0) ? value :
-    //            throw new ArgumentException("Side length cannot be negative.");
-    //    }
+        public int B
+        {
+            get => _sideB;
+            set => _sideB = (value > 0) ? value :
+                throw new ArgumentException("Side length cannot be negative.");
+        }
 
-    //    public override Figures CreateFigure()
-    //    {
-    //        return new Rectangle();
-    //    }
+        public override Figures CreateFigure()
+        {
+            return new Rectangle();
+        }
 
-    //    public override void ShowFigure()
-    //    {
-    //        Console.WriteLine("Rectangle");
-    //    }
+        public override void ShowFigure()
+        {
+            Console.WriteLine("Rectangle");
+        }
 
-    //    public double RectangleArea => A * B;
+        public double RectangleArea => A * B;
 
-    //    public double RectanglePerimeter => A + B;
+        public double RectanglePerimeter => A + B;
 
-    //}
+    }
 
-    //class Circle : Figures
-    //{
-    //    public override int X => throw new NotImplementedException();
+    class Circle : Figures
+    {
+        public override int X => throw new NotImplementedException();
 
-    //    public override int Y => throw new NotImplementedException();
+        public override int Y => throw new NotImplementedException();
 
-    //    public override Figures CreateFigure()
-    //    {
-    //        return new Circle();
-    //    }
+        public override Figures CreateFigure()
+        {
+            return new Circle();
+        }
 
-    //    public override void ShowFigure()
-    //    {
-    //        Console.WriteLine("Circle");
-    //    }
+        public override void ShowFigure()
+        {
+            Console.WriteLine("Circle");
+        }
 
-    //    protected double _radius;
+        protected double _radius;
 
-    //    protected virtual double Radius2
-    //    {
-    //        get => _radius;
-    //        set => _radius = (value >= 0) ? value :
-    //            throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero.");
-    //    }
+        protected virtual double Radius2
+        {
+            get => _radius;
+            set => _radius = (value >= 0) ? value :
+                throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero.");
+        }
 
-    //    protected virtual double Сircumference2 { get { return 2 * Math.PI * Radius2; } }
-    //}
+        protected virtual double Сircumference2 { get { return 2 * Math.PI * Radius2; } }
+    }
 
-    //class Round2 : Circle
-    //{
-    //    public override int X => throw new NotImplementedException();
+    class Round2 : Circle
+    {
+        public override int X => throw new NotImplementedException();
 
-    //    public override int Y => throw new NotImplementedException();
+        public override int Y => throw new NotImplementedException();
 
-    //    public override Figures CreateFigure()
-    //    {
-    //        return new Circle();
-    //    }
+        public override Figures CreateFigure()
+        {
+            return new Circle();
+        }
 
-    //    public override void ShowFigure()
-    //    {
-    //        Console.WriteLine("Circle");
-    //    }
-    //    protected override double Radius2
-    //    {
-    //        get => _radius;
-    //        set => _radius = (value >= 0) ? value :
-    //            throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero.");
-    //    }
+        public override void ShowFigure()
+        {
+            Console.WriteLine("Circle");
+        }
+        protected override double Radius2
+        {
+            get => _radius;
+            set => _radius = (value >= 0) ? value :
+                throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero.");
+        }
 
-    //    protected override double Сircumference2 { get { return 2 * Math.PI * Radius2; } }
+        protected override double Сircumference2 { get { return 2 * Math.PI * Radius2; } }
 
-    //    protected virtual double Area2 { get { return Math.PI * Radius2 * Radius2; } }
+        protected virtual double Area2 { get { return Math.PI * Radius2 * Radius2; } }
 
 
-    //}
+    }
 
-    //class Ring2 : Round2
-    //{
-    //    public override int X => throw new NotImplementedException();
+    class Ring2 : Round2
+    {
+        public override int X => throw new NotImplementedException();
 
-    //    public override int Y => throw new NotImplementedException();
+        public override int Y => throw new NotImplementedException();
 
-    //    public override Figures CreateFigure()
-    //    {
-    //        return new Ring2();
-    //    }
+        public override Figures CreateFigure()
+        {
+            return new Ring2();
+        }
 
-    //    public override void ShowFigure()
-    //    {
-    //        Console.WriteLine("Ring2");
-    //    }
-    //    protected override double Radius2
-    //    {
-    //        get => _radius;
-    //        set => _radius = (value >= 0) ? value :
-    //            throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero.");
-    //    }
-        
-    //    private double _outerRadius; //внешний радиус, внутрений радиус тот же что у круга, для этого примера
-    //    private double _ringArea;  //площадь кольца
-    //    private int _outerСircumference; //длина внешней окружности
-    //    private int _totalLength; //суммарная длина обеих окружностей
+        public override void ShowFigure()
+        {
+            Console.WriteLine("Ring2");
+        }
+        protected override double Radius2
+        {
+            get => _radius;
+            set => _radius = (value >= 0) ? value :
+                throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero.");
+        }
 
-    //    public double OuterRadius
-    //    {
-    //        get => _outerRadius;
-    //        set => _outerRadius = (value >= 0) ? value :
-    //            throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero.");
-    //    }
+        private double _outerRadius; //внешний радиус, внутрений радиус тот же что у круга, для этого примера
+        private double _ringArea;  //площадь кольца
+        private int _outerСircumference; //длина внешней окружности
+        private int _totalLength; //суммарная длина обеих окружностей
 
-    //    public double RingArea()
-    //    {
+        public double OuterRadius
+        {
+            get => _outerRadius;
+            set => _outerRadius = (value >= 0) ? value :
+                throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero.");
+        }
 
-    //        double ringarea = Math.PI * OuterRadius * OuterRadius;
-    //        double result = ringarea - Area2;
-    //        return result;
-    //    }
+        public double RingArea()
+        {
 
-    //    public double OuterСircumference { get { return 2 * Math.PI * OuterRadius; } }
+            double ringarea = Math.PI * OuterRadius * OuterRadius;
+            double result = ringarea - Area2;
+            return result;
+        }
 
-    //    public double TotalLength()
-    //    {
-    //        return OuterСircumference + Сircumference2; 
-    //    }
-    //}
+        public double OuterСircumference { get { return 2 * Math.PI * OuterRadius; } }
+
+        public double TotalLength()
+        {
+            return OuterСircumference + Сircumference2;
+        }
+    }
 
 }

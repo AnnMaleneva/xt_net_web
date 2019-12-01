@@ -50,10 +50,6 @@ namespace Task02
 
             //Console.WriteLine("Стаж работы: {0}.", employee.WorkExperience);
 
-            Line l = new Line(4, 3, 5, 6);
-
-            l.ShowFigure();
-
 
 
 

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Employee.cs" />
     <Compile Include="Figures.cs" />
+    <Compile Include="MapForGame.cs" />
     <Compile Include="MyString.cs" />
     <Compile Include="Ring.cs" />
     <Compile Include="Round.cs" />
