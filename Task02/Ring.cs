@@ -36,11 +36,8 @@ namespace Task02
 
         public double OuterСircumference { get { return 2 * Math.PI * OuterRadius; } } 
 
-        public double TotalLength () 
-        {
-            return OuterСircumference + Сircumference;
-        }
-
+        public double TotalLength { get { return OuterСircumference + Сircumference; } }
+        
 
     }
 }

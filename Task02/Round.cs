@@ -30,7 +30,7 @@ namespace Task02
             set => _radius = (value >= 0) ? value :
                 throw new ArgumentException("Invalid radius value. Radius value must be positive number and greater than zero."); } 
         
-        public double Сircumference { get { return 2 * Math.PI * Radius; } } //здесь сделала расчеты через вычисляемые свойства, в следующем задании через методы
+        public double Сircumference { get { return 2 * Math.PI * Radius; } } 
         
         public double AreaCircle { get { return Math.PI * Radius * Radius; } }
         

@@ -48,8 +48,11 @@ namespace Task02
         }
 
 
-        internal double Square(int _a, int _b, int _c)
+        internal double Square(int _a, int _b, int _c) 
         {
+            //эти вычисления можно было сделать через вычисляемые свойства, 
+            //но запись было бы слишком большой
+
             double HalfP = (_a + _b + _c) / 2;
             
             return Math.Sqrt(HalfP * (HalfP - _a) * (HalfP - _b) * (HalfP - _c));

@@ -21,7 +21,7 @@ namespace Task02
         public int Height { get; }
 
         private List<IBonus> Bonus = new List<IBonus>();
-
+ 
         private List<IObstacles> Obstacles = new List<IObstacles>();
 
         private List<IEnemy> Enemies = new List<IEnemy>();
