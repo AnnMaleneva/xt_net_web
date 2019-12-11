@@ -5,22 +5,20 @@ using System.Collections.Generic;
 
 namespace Task03
 {
-    class DynamicArray<T> : ICollection<T>, IEnumerable<T>, IEnumerator<T>
+    class DynamicArray<T> : IEnumerable<T>, IEnumerator<T>
     {
-        T[] array;
-        private int index;
+        public T[] array;
+        public int index;
         public int count = 0; //стоит переименовать count в position, но пока что так, иначе запутаюсь
-        int Index { get => index; set => index = (value < 0) ? value : throw new ArgumentException("Invalid point"); }
-        public int Length { get; set; } //TODO: дописать логику присваивания значения
+        public int Index { get => index; set => index = (value < 0) ? value : throw new ArgumentException("Invalid point"); }
+        public int Length { get; set; } 
 
-        public int Capacity { get; set; } 
-        //TODO: дописать логику, хотя пока что capacity = length, 
-        //ибо думаю только о массиве чисел и забыла про массив строк
+        public int Capacity { get { return array.Length; } } 
 
+        Array
         public DynamicArray()
         {
-            Length = 8;
-            this.array = new T[Length];
+            this.array = new T[8];
 
         }
 
@@ -63,17 +61,23 @@ namespace Task03
             }
         }
 
-
-        public int Count { get { return count; } } //пока не знаю зачем так сделала, наверно просто чтоб убрать исключение
-
-        public bool IsReadOnly => throw new NotImplementedException();
+        public T[] ChangeCapacity(int newCapacity)
+        {
+            int newLength = array.Length + newCapacity;
+            T[] newArray = new T[newLength];
+            for (int i = 0; i < newLength; i++)
+            {
+                newArray[i] = array[i];
+            }
+            return newArray;
+        }
 
         public void Add(T item)
         {
             array[count] = item;
             count++;
             if (Length < count)
-                Length *= 2;
+                ChangeCapacity(Length * 2);
 
         }
 
@@ -84,7 +88,7 @@ namespace Task03
             {
                 sizeOfmyCollection++;
             }
-            Length += sizeOfmyCollection;
+            ChangeCapacity(Length + sizeOfmyCollection);
             foreach (var item in myCollection)
             {
                 array[count] = item;
@@ -92,27 +96,7 @@ namespace Task03
             }
 
         }
-
-        public void Clear()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Contains(T item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CopyTo(T[] array, int arrayIndex)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerator<T> GetEnumerator()
-        {
-            return new DynamicArray<T>(this);
-        }
-
+        
         public bool Remove(T item) //не проверяла изменится ли емкость массива сама
         {
             int indexToRemove = -1;
@@ -125,11 +109,16 @@ namespace Task03
                 return false;
             array[indexToRemove] = default;
             return true;
-        }
+        } 
 
-        IEnumerator IEnumerable.GetEnumerator()
+        public IEnumerator GetEnumerator()
         {
             return array.GetEnumerator();
+        }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            return ((IEnumerable<T>)array).GetEnumerator();
         }
 
 
@@ -172,7 +161,7 @@ namespace Task03
                 throw new ArgumentOutOfRangeException();
             else
             {
-                Length++;
+                ChangeCapacity(1);
                 array[positionIndex] = temp;
                 temp = array[positionIndex + 1]; //тут нужно чтоб все элементы сдвинулись право
 

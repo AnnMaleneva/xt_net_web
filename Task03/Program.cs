@@ -10,15 +10,18 @@ namespace Task03
             //Lost lost = new Lost();
             //lost.Method();
 
-            DynamicArray<int> ar = new DynamicArray<int>(2);
-            ar.Add(0);
-            ar.Add(2);
+            //DynamicArray<int> ar = new DynamicArray<int>();
+            //ar.Add(0);
+            //ar.Add(2);
+            //ar.Insert(6, 1);
 
-            foreach (var item in ar)
-            {
-                Console.WriteLine(item);
-            }
-            Console.ReadLine();
+            //foreach (var item in ar)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.ReadLine();
+
+         
         }
     }
 }
