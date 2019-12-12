@@ -8,18 +8,26 @@ namespace Task03
 {
     public class WordFrequency
     {
-        public static void MyClass()
+        public void FindWords()
         {
-            Dictionary<int, string> MyDictionary = new Dictionary<int, string>();
+            string str = "New english text or nor text";
 
-            string newStr = "new english text";
+            List<string> words = new List<string>(str.ToLower().Split(new char[] { ' ', ',', '.', '\n' }));
 
-            List<string> words = new List<string>(newStr.ToLower().Split(new char[] { ' ', ',', '.', '\n' }));
-
-            foreach (var item in words)
+            for (int i = 0; i < words.Count; i++)
             {
-                MyDictionary.Add(1, item);
+                int count = 0;
+
+                for (int j = 0; j < words.Count; j++)
+                {
+                    if (words[i] == words[j])
+                        count++;
+
+                }
+                Console.WriteLine("Word {0} is found {1} time.", words[i], count);
+
             }
+            Console.ReadKey();
         }
     }
 }

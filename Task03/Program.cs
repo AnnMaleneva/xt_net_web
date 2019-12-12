@@ -21,6 +21,11 @@ namespace Task03
             //}
             //Console.ReadLine();
 
+            WordFrequency test = new WordFrequency();
+
+            test.FindWords();
+            Console.ReadKey();
+
          
         }
     }
