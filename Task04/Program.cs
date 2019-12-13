@@ -19,7 +19,7 @@ namespace Task04
             objectForSorting.OnStopSort += ObjectForSorting_OnStopSort;
 
 
-            objectForSorting.SortArray(array, deleg);
+            //objectForSorting.SortArray(array, deleg);
             Thread thread = new Thread(() => { objectForSorting.SortArray(array, deleg); });
             thread.Start();
          
