@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Task04
@@ -12,28 +13,64 @@ namespace Task04
         {
             Func<int, int, bool> deleg = delegate (int a, int b) { return a > b; };
 
-            int[] array = new int[] { 6, 7, 2, 1, 3, 4, 5, 9, 8 };
+            Sorting objectForSorting = new Sorting();
 
-            SortArray(array, deleg);
+            int[] array = new int[] { 6, 7, 2, 1, 3, 4, 5, 9, 8 };
+            objectForSorting.OnStopSort += ObjectForSorting_OnStopSort;
+
+
+            objectForSorting.SortArray(array, deleg);
+            Thread thread = new Thread(() => { objectForSorting.SortArray(array, deleg); });
+            thread.Start();
+         
+            objectForSorting.OnStopSort -= ObjectForSorting_OnStopSort;     
+
+
             foreach (var item in array)
             {
                 Console.WriteLine(item);
             }
 
             string[] arrayString = new string[] { "каждый", "охотник", "желает", "знать", "где", "сидит", "фазан" };
-            SortString(arrayString, deleg);
+
+            objectForSorting.SortString(arrayString, deleg);
+
             Console.WriteLine("Режим магистра Йоды - ON");
             foreach (var item in arrayString)
             {
                 Console.WriteLine(item);
             }
 
+
             Console.ReadLine();
 
         }
 
-        static void SortArray(int[] array, Func<int, int, bool> funcAction)
+        private static void ObjectForSorting_OnStopSort()
         {
+            Console.WriteLine("Sort is finish."); ;
+        }
+    }
+    class Sorting
+    {
+
+        public event Action OnStopSort = delegate { };
+
+        public void SortInAdditionalThread(int[] array, Func<int, int, bool> funcAction)
+        {
+            new Thread(() =>
+            {
+                SortArray(array, funcAction);
+                //OnStopSort?.Invoke();
+            }).Start();
+        }
+
+        public void SortArray(int[] array, Func<int, int, bool> funcAction)
+        {
+            OnStopSort?.Invoke();
+            if (funcAction == null)
+                throw new ArgumentException("funcAction", "Function argument cannot be null or empty.");
+
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array.Length - 1; j++)
@@ -44,12 +81,14 @@ namespace Task04
                     }
                 }
             }
-
+            
         }
 
-        static void SortString(string[] array, Func<int, int, bool> funcString)
+        public void SortString(string[] array, Func<int, int, bool> funcString)
         {
-
+            
+            if (funcString == null)
+                throw new ArgumentException("funcAction", "Function argument cannot be null or empty.");
 
             for (int i = 0; i < array.Length; i++)
             {
@@ -64,17 +103,18 @@ namespace Task04
                         {
                             string temp = array[j];
                             array[j] = array[j + 1];
-                            array[j+1] = temp;
+                            array[j + 1] = temp;
 
-                            IEnumerable<string> query = from word in array
-                                                        orderby word.Length
-                                                        select word;
+                            //IEnumerable<string> query = from word in array
+                            //                            orderby word.Length
+                            //                            select word;
                         }
 
 
                     }
                 }
             }
+            
         }
 
         static void Swap(int[] array, int left, int right)
