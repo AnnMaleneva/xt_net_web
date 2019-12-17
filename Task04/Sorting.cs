@@ -56,9 +56,7 @@ namespace Task04
                             array[j] = array[j + 1];
                             array[j + 1] = temp;
 
-                            //IEnumerable<string> query = from word in array
-                            //                            orderby word.Length
-                            //                            select word;
+
                         }
 
 
@@ -77,5 +75,14 @@ namespace Task04
                 array[right] = temp;
             }
         }
+
+        public int Sum(int a, int b) => a + b;
+
+        public bool PositiveNumber (string a)
+        {
+            return ((a.All(char.IsDigit)) && !(a.Contains("-"))); //вначале проверяет есть ли числа, потом если есть - значит число отрицательное     
+
+        }
+        
     }
 }

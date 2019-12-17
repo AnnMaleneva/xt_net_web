@@ -11,6 +11,7 @@ namespace Task04
     {
         static void Main(string[] args)
         {
+
             Func<int, int, bool> deleg = delegate (int a, int b) { return a > b; };
 
             Sorting objectForSorting = new Sorting();
@@ -23,8 +24,8 @@ namespace Task04
             //Thread thread = new Thread(() => { objectForSorting.SortArray(array, deleg); });
             objectForSorting.SortInAdditionalThread(array, deleg);
             //thread.Start();
-         
-            objectForSorting.OnStopSort -= ObjectForSorting_OnStopSort;     
+
+            objectForSorting.OnStopSort -= ObjectForSorting_OnStopSort;
 
 
             foreach (var item in array)
@@ -52,4 +53,6 @@ namespace Task04
             Console.WriteLine("Sort is finish."); ;
         }
     }
+
 }
+
