@@ -18,6 +18,7 @@ namespace UserConsolePL
             var award = DependencyResolver.AwardLogic;
             award.AddAward(new Award() { AwardID = 1, TitleAward = "Award" });
             award.AddAward(new Award() { AwardID = 2, TitleAward = "Award2" });
+            award.AddUserToAward(1, 1);
 
 
 

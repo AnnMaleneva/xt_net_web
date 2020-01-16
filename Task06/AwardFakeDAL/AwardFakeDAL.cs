@@ -32,7 +32,7 @@ namespace AwardDAL
 
         public void AddUserToAward(int userId, int awardId)
         {
-            _awards[awardId].AwardUsers.Add(awardId);
+            _awards[awardId].AwardUsers.Add(userId);
         }
 
 

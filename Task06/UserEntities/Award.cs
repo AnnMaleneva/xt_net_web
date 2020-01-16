@@ -12,11 +12,11 @@ namespace UserEntities
 
         public string TitleAward { get; set; }
 
-        public IList<int> AwardUsers { get; }
+        public IList<int> AwardUsers { get; } = new List<int>();
 
         public override string ToString()
         {
-            return $"{AwardID} {TitleAward}";
+            return $"{AwardID} {TitleAward} {AwardUsers}";
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace UserEntities
 {
@@ -11,6 +12,8 @@ namespace UserEntities
         public DateTime DateOfBirth { get; set; }
 
         public int Age => DateTime.Now.Year - DateOfBirth.Year;
+
+        public IList<int> UserAwards { get; } = new List<int>();
 
         public override string ToString()
         {
