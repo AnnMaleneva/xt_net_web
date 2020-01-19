@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="RegistrationFormStyle.css">
-    <head></head>
-    <body>
-        <div class="reg">
-            <h2>Регистрация</h2>
-            <hr>
-        <label for="email">E-mail</label>
-        <input type="text" id="email"><br>
+<link rel="stylesheet" href="RegistrationFormStyle.css">
 
-        <div class="pass">
+<head></head>
 
-        <label for="password">Пароль</label>
-        <input type="text" id="password"><br>
-        
-        
-        <label for="again">Ещё раз</label>
-        <input type="text" id="again"><br>
-        
+<body>
+    <form>
+        <h2>Регистрация</h2>
+        <hr>
+        <div class="email">
+            <label for="email">E-mail</label>
+            <input type="text" id="email">
         </div>
 
+        <div class="pass">
+            <label for="password">Пароль</label>
+            <input type="text" id="password">
+        </div>
+
+        <div class="pass again">
+            <label for="again">Ещё раз</label>
+            <input type="text" id="again">
+
+        </div>
         <button>Отправить</button>
-    </div>
-    </body>
+    </form>
+</body>
+
 </html>

@@ -1,12 +1,18 @@
-#email{
-    width: 320px;
+.email > input {
+    width: 350px;
     height: 20px;
     padding: 10px;
     box-sizing: border-box;
-    margin: 20px;
+    margin-left: 20px;
     margin-top: 1px;
-}
-.reg{
+  }
+  .email > label {
+    margin-left: 20px;
+  }
+  .email {
+    margin-top: 30px;
+  }
+  form {
     width: 410px;
     height: 280px;
     background-color: #0099cc;
@@ -14,40 +20,23 @@
     border-width: 2px;
     border-color: #006699;
     color: #ffffff;
-}
-label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 3px;
-  margin-left: 20px;
-}
-hr{
-  width:407px;
-}
-h2{
-  margin: 20px;
-}
-#password{
-    width: 150px;
-    height: 20px;
-    padding: 10px;
-    box-sizing: border-box;
+  }
+  hr {
+    width: 407px;
+  }
+  h2 {
     margin: 20px;
-    margin-top: 1px;
-    float: left;
-}
-#again{
-    width: 150px;
-    height: 20px;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-top: 1px;
-}
-.pass{
-  display: inline-block;
-  width: 100%;
-}
-button{
-  margin-left: 20px;
-  background-color: #ffdf7f;
-}
+  }
+  .pass{
+      width: 150px;
+      height: 20px;
+      padding: 10px;
+      box-sizing: border-box;
+      margin: 10px;
+      display: inline-block;
+  }
+  
+  button{
+    margin: 20px;
+    background-color: #ffdf7f;
+  }
