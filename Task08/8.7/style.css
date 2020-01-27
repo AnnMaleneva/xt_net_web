@@ -1,0 +1,28 @@
+    .back, .front{
+      position: relative;
+    }
+    .back {
+    width: 400px;
+    height: 40px;
+    background: #008b66;
+    font-family: serif;
+    font-size: 20px;
+    text-align: inherit;
+    color: white;
+    padding-top: 15px;
+    padding-left: 15px;
+    z-index: 1;
+   }
+   .front {
+    top: -10px;
+    left: 35px;
+    width: 370px;
+    height: 130px;
+    background: #dfe6e1;
+    font-family: serif;
+    font-size: 15px;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    z-index: 2;
+   }

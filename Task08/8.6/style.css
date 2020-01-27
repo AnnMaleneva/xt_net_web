@@ -1,0 +1,29 @@
+body { background: #333; }
+   div {
+    background: repeating-linear-gradient(to bottom, transparent, 
+    transparent 20px, #333 20px, #333 23px),
+    linear-gradient(to bottom, #ffd059, #ff8c00);
+    width: 40px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+    vertical-align: bottom;
+   }
+    .st1 { 
+       height: 50%; 
+      }
+    .st2 { 
+       height: 80%; 
+      }
+    .st3 { 
+       height: 20%; 
+      }
+    .st4 { 
+       height: 10%; 
+      }
+    .st5 { 
+       height: 100%; 
+      }
+    .st6 { 
+       height: 60%; 
+      }

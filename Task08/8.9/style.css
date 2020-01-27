@@ -1,0 +1,23 @@
+.step1, .step2, .step3, .step4 {
+  display: inline-block;
+  width: 100px;
+  height: 25px;
+  background: linear-gradient(to top, #d6d6d6 20%, #c0c0c0 50%, #d6d6d6 80%);
+  text-align: center;
+  padding-top: 3px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+.step1 {
+clip-path: polygon(0 100%, 0 0, 90% 0, 100% 50%, 90% 100%);
+}
+.step2, .step3 {
+  clip-path: polygon(0 100%, 10% 50%, 0 0, 90% 0, 100% 50%, 90% 100%);
+}
+.step4 {
+  clip-path: polygon(0 100%, 10% 50%, 0 0, 100% 0, 100% 100%);
+}
+.step1:hover, .step2:hover, .step3:hover, .step4:hover{
+  background: linear-gradient(to top, #aee188 20%, #64c51d 50%, #aee188 80%);
+  color: white;
+}

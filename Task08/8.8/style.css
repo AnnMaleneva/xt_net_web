@@ -1,0 +1,39 @@
+body {
+    background: black;
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+  .text{
+   width: 330px;
+   height: 220px;
+   background: linear-gradient(to top, #d1cfcf, #fcfcfc);
+   border-radius: 0 0 10px 10px;
+   padding-top: 25px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+   z-index: 1;
+  }
+  .black {
+   width: 120px;
+   height: 35px;
+ -o-transform: skewX(-30deg);
+ -ms-transform: skewX(-30deg);
+ -moz-transform: skewX(-30deg);
+ -webkit-transform: skewX(-30deg);
+ transform: skewX(-30deg);
+ background: black;
+ margin-left: -12px;
+ z-index: 2;
+ }
+ .text, .black, .text1{
+   position: absolute;
+ }
+ .text1 {
+   width: 100px;
+   height: 35px;
+   color: #ffb558;
+   z-index: 3;
+   font-size: 25px;
+   text-align: center;
+   font-weight: bold;
+ }
