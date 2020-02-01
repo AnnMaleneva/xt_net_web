@@ -1,71 +1,68 @@
 .menu *{
-  margin: 0;
-  padding: 0;
- }
- .menu ul,
- .menu ol{
-  list-style: none;
- }
- .menu > ul{
-  display: flex;
-  justify-content: left;
- }
- .menu > ul li{
-  position: relative;
- }
- .menu > ul li a{
-  display: block;
-  padding: 1px 3px 1px 4px;
-  font-size: 14px;
- }
- .menu li a:hover{
-  color: rgb(221, 54, 54);
-  text-decoration: none;
-  }
-
- /*sub menu*/
- .menu li ul{
-  position: absolute;
-  min-width: 150px;
-  display: none;
- }
- .menu li > ul li a{
-  padding: 10px;
-  text-transform: none;
- 
- }
- .menu li > ul li ul{
-  position: absolute;
-  right: -150px;
-  top: 0;
- }
- .menu li:hover > ul {
-  display: block;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
- }
-
-.menu > ul > li:hover > .top {
-    background-color: white;
-    z-index: 1;
-}
-
-.top::before {
-    content: '';
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    position: absolute;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: -1;
-}
-
-.menu > ul > li:hover > .top::before {
+    margin: 0;
+    padding: 0;
+   }
+   .menu ul {
+    list-style: none;
+    color: blue;
+   }
+   .menu > ul{
+    display: flex;
+    justify-content: left;
+   }
+   .menu > ul li{
+    position: relative;
+   }
+   .menu > ul li a{
     display: block;
-}
-
-.menu > ul > li > ul  {
-    background-color: white;
-    z-index: -1;
-}
+    padding: 5px;
+    font-size: 14px;
+    }
+   .menu li a:hover{
+    color: white;
+    background: #37abff;
+    text-transform: none;
+   }
+  
+   /*sub menu*/
+   .menu li ul{
+    position: absolute;
+    min-width: 150px;
+    display: none;
+   }
+   .menu li > ul li ul{
+    position: absolute;
+    right: -150px;
+    top: 0;
+   }
+   .menu li:hover > ul {
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+   }
+  .menu > ul > li:hover > .top {
+      background-color: white;
+      z-index: 1;
+      color: black;
+      text-decoration: none;
+  }
+  
+  .top::before {
+      content: '';
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      position: absolute;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: -1;
+  }
+  
+  .menu > ul > li:hover > .top::before {
+      display: block;
+  }
+  
+  .menu > ul > li > ul  {
+      background-color: white;
+      z-index: -1;
+  }
