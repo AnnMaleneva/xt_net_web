@@ -1,0 +1,5 @@
+select, div{
+    position: relative;
+    display: inline-block;
+    margin: auto;
+}

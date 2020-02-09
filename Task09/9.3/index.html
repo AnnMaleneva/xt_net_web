@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="javascript.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="title">Available</div>
+    <select id="Available" size="5">
+        <option value="op1">Option 1</option>
+        <option value="op2">Option 2</option>
+        <option value="op3">Option 3</option>
+        <option value="op4">Option 4</option>
+        <option value="op5">Option 5</option>
+    </select>
+
+    <div>
+        <button onclick="moveAll(document.getElementById('Available'),document.getElementById('Selected'))">>></button> <br>
+
+        <button onclick="moveOne(document.getElementById('Available'),document.getElementById('Selected'))">></button> <br>
+
+        <button onclick="moveOne(document.getElementById('Selected'),document.getElementById('Available'))"><</button> <br>
+
+        <button onclick="moveAll(document.getElementById('Selected'),document.getElementById('Available'))"><<</button>
+    </div>
+
+    <div class="title">Selected</div>
+    <select id="Selected" size="5">
+
+    </select>
+</body>
+
+</html>
